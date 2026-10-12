@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOMI Study & Task Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="phone-frame">
+        <!-- App Header -->
+        <header class="app-header">
+            <div class="logo">
+                <i class="fa-solid fa-cube"></i>
+                <h1>SOMI</h1>
+            </div>
+            <div class="user-profile">
+                <i class="fa-solid fa-bell"></i>
+                <span class="badge">3</span>
+            </div>
+        </header>
+
+        <!-- Main Dashboard View -->
+        <main class="dashboard">
+            <!-- Progress Banner Card -->
+            <section class="progress-card">
+                <div class="progress-info">
+                    <h2>Good day, Ayush</h2>
+                    <p>Today's Progress</p>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-fill" style="width: 68%;"></div>
+                </div>
+                <span class="progress-text" id="progress-stat">3 of 5 tasks completed (68%)</span>
+            </section>
+
+            <!-- Quick Stats Grid -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <i class="fa-solid fa-bullseye" style="color: #38bdf8;"></i>
+                    <h3>87%</h3>
+                    <p>Weekly Goal</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-book" style="color: #a855f7;"></i>
+                    <h3 id="subject-count">12</h3>
+                    <p>Subjects</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-fire" style="color: #f97316;"></i>
+                    <h3>45</h3>
+                    <p>Streak Day</p>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <button class="action-btn glow-btn" onclick="openModal()">
+                    <i class="fa-solid fa-plus-circle"></i> Add Task / Study Plan
+                </button>
+            </section>
+
+            <!-- Upcoming Tasks / List -->
+            <section class="tasks-section">
+                <div class="section-title">
+                    <h2>Upcoming Tasks</h2>
+                    <span class="see-all">Active</span>
+                </div>
+                <div id="task-list" class="task-list">
+                    <!-- Dynamic tasks inserted here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Navigation Bar -->
+        <nav class="bottom-nav">
+            <button class="nav-item active"><i class="fa-solid fa-house"></i><span>Home</span></button>
+            <button class="nav-item" onclick="alert('Pomodoro & Focus Timer view coming soon!')"><i class="fa-solid fa-clock"></i><span>Timer</span></button>
+            <button class="nav-item" onclick="openModal()"><i class="fa-solid fa-circle-plus" style="font-size: 1.8rem; color: #a855f7;"></i></button>
+            <button class="nav-item" onclick="alert('Analytics view coming soon!')"><i class="fa-solid fa-chart-pie"></i><span>Stats</span></button>
+            <button class="nav-item" onclick="alert('Profile settings')"><i class="fa-solid fa-user"></i><span>Profile</span></button>
+        </nav>
+
+        <!-- Modal for Adding Tasks -->
+        <div id="taskModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h2>Create New Task</h2>
+                <form id="task-form">
+                    <div class="form-group">
+                        <label>Task / Subject Title</label>
+                        <input type="text" id="task-title" placeholder="e.g., Mathematics Calculus Review" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Time Slot</label>
+                        <input type="text" id="task-time" placeholder="e.g., 2:00 PM - 3:30 PM" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Priority Level</label>
+                        <select id="task-priority">
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Save Task</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
